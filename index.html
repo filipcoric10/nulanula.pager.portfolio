@@ -5,9 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>NULA NULA · Media kit 2026</title>
 <meta name="description" content="NULA NULA – slow football magazin. Čitalac koji ne žuri: publika, angažovanost i saradnja.">
+<link rel="canonical" href="https://filipcoric10.github.io/nulanula.pager.portfolio/">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NULA NULA">
+<meta property="og:locale" content="sr_RS">
+<meta property="og:url" content="https://filipcoric10.github.io/nulanula.pager.portfolio/">
 <meta property="og:title" content="NULA NULA · Media kit 2026">
-<meta property="og:description" content="Izdavačka kuća NULA NULA je kulturni iskorak koji supkulture pretvara u mainstream.">
-<meta property="og:image" content="assets/broj3.jpg">
+<meta property="og:description" content="Izdavačka kuća NULA NULA je kulturni iskorak koji supkulture pretvara u mainstream. Mesto slow footballa i drugačijeg načina.">
+<meta property="og:image" content="https://filipcoric10.github.io/nulanula.pager.portfolio/assets/og-image.jpg">
+<meta property="og:image:secure_url" content="https://filipcoric10.github.io/nulanula.pager.portfolio/assets/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="NULA NULA – Slow football magazin, Media kit 2026">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NULA NULA · Media kit 2026">
+<meta name="twitter:description" content="Izdavačka kuća NULA NULA je kulturni iskorak koji supkulture pretvara u mainstream.">
+<meta name="twitter:image" content="https://filipcoric10.github.io/nulanula.pager.portfolio/assets/og-image.jpg">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,13 +81,14 @@ h1,p{margin:0}
 .rot{position:relative;width:100%;margin-inline:auto}
 .layer{position:absolute;inset:0;transition:opacity .8s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
 .bk{opacity:0;transform:scale(.96) translateY(10px);pointer-events:none}
-.rot.books .mag{opacity:0;transform:scale(.96) translateY(10px)}
-.rot.books .bk{opacity:1;transform:none}
+.rot.show-books .mag{opacity:0;transform:scale(.96) translateY(10px)}
+.rot.show-books .bk{opacity:1;transform:none}
 .mag img{position:absolute;object-fit:cover}
 .c-l,.c-r{height:calc(var(--sw) / .7)}.c-c{height:calc(var(--cw) / .7)}
 .c-l{left:4px;top:30px;width:var(--sw);transform:rotate(-8deg);box-shadow:var(--sh-md)}
 .c-r{right:4px;top:30px;width:var(--sw);transform:rotate(8deg);box-shadow:var(--sh-md)}
 .c-c{left:50%;top:0;width:var(--cw);margin-left:calc(var(--cw) / -2);box-shadow:var(--sh-lg);z-index:2}
+.kb{position:absolute;left:50%;top:50%;width:var(--kw);height:auto;transform:translate(-50%,-50%)}
 .books{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:var(--bg);perspective:1100px}
 .book{position:relative;width:var(--bw);height:calc(var(--bw) / .7);flex:none;-webkit-transform-style:preserve-3d;transform-style:preserve-3d}
 .book.l{transform:rotateY(24deg) rotateZ(-3deg)}
@@ -96,7 +115,7 @@ h1,p{margin:0}
 .m-kick{margin-top:20px;color:var(--blue-d)}
 .m-h1{font-size:36px;line-height:1.04;margin:8px 0;font-weight:600;letter-spacing:-.015em;text-wrap:balance}
 .m-lede{font-size:15px;line-height:1.45;text-wrap:pretty}
-.m .rot{height:252px;max-width:360px;margin-top:18px;--cw:168px;--sw:128px;--bw:138px;--bt:18px;--bg:26px}
+.m .rot{height:252px;max-width:360px;margin-top:18px;--cw:168px;--sw:128px;--kw:320px}
 .g4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .g3{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .m-stats{margin-top:18px}
@@ -142,7 +161,7 @@ h1,p{margin:0}
   .g3{grid-template-columns:repeat(3,1fr)}
   .m-h1{font-size:48px}
   .m-lede,.m-sec>p{font-size:17px;max-width:640px}
-  .m .rot{height:320px;max-width:460px;--cw:214px;--sw:164px;--bw:176px;--bt:22px;--bg:34px}
+  .m .rot{height:320px;max-width:460px;--cw:214px;--sw:164px;--kw:420px}
   .eng-wrap{grid-template-columns:repeat(2,1fr)}
   .ov p{font-size:28px}
 }
@@ -159,14 +178,14 @@ h1,p{margin:0}
 .d-head img{height:40px;width:auto}
 .d-head .right{display:flex;align-items:center;gap:28px}
 .d-head a{font-size:14px;font-weight:600}
-.d-grid{flex:1;display:grid;grid-template-columns:clamp(320px,30vw,460px) minmax(0,1fr);gap:40px;margin-top:24px}
+.d-grid{display:grid;grid-template-columns:clamp(320px,30vw,460px) minmax(0,1fr);gap:40px;margin-top:24px}
 .d-left{display:flex;flex-direction:column}
 .d-left h1{font-size:clamp(40px,3.6vw,60px);line-height:1;margin-bottom:14px;font-weight:600;letter-spacing:-.02em;text-wrap:balance}
 .d-left p{font-size:clamp(14.5px,1.1vw,17px);line-height:1.45;text-wrap:pretty}
-.d .rot.mags{height:272px;margin:32px 0 0;max-width:390px;--cw:180px;--sw:140px}
-.d .rot.bks{height:250px;margin:14px 0 0;max-width:390px;--bw:152px;--bt:20px;--bg:36px}
-.d-addr{font-size:11.5px;line-height:1.45;margin-top:auto;padding-top:24px;color:var(--muted);font-style:normal}
-.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:auto minmax(220px,1fr) minmax(220px,1fr);gap:12px}
+.d .rot.mags{height:244px;margin:28px 0 0;max-width:380px;--cw:164px;--sw:128px}
+.d .rot.bks{height:230px;margin:14px 0 0;max-width:380px;--kw:310px}
+.d-addr{font-size:11.5px;line-height:1.45;padding-top:18px;color:var(--muted);font-style:normal}
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:auto auto auto;gap:12px;align-self:start}
 .row1{grid-column:1 / span 4;display:grid;grid-template-columns:1fr 1.3fr .8fr 1fr 1.1fr;gap:12px}
 .row1 .card{justify-content:space-between;min-height:112px;gap:10px}
 .row1 .num{font-size:clamp(20px,1.9vw,28px);color:var(--blue-d);white-space:nowrap}
@@ -182,18 +201,18 @@ h1,p{margin:0}
 .b-nl{gap:14px}
 .b-nl .num{font-size:40px;letter-spacing:-.02em}
 .b-nl div div:last-child{font-size:12.5px;line-height:1.35;margin-top:2px}
-.b-nl .last{margin-top:auto}
+.b-nl .last{margin-top:4px}
 .b-eng{gap:6px}
 .b-eng .big{font-size:46px;font-weight:600;line-height:1;letter-spacing:-.02em}
-.b-eng p{font-size:12px;line-height:1.4;margin-top:auto;text-wrap:pretty}
+.b-eng p{font-size:12.5px;line-height:1.4;margin-top:6px;text-wrap:pretty}
 .b-psy{gap:10px}
 .b-psy .b-cap,.b-fmt .b-cap{color:var(--blue-d)}
 .b-psy b{font-size:13.5px;font-weight:600;display:block;line-height:1.25}
 .b-psy span{font-size:11.5px;line-height:1.36;display:block;margin-top:1px}
 .b-fmt{gap:9px}
 .b-fmt .f{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600}
-.b-fmt .note{font-size:11.5px;line-height:1.35;color:var(--muted);margin-top:auto}
-.r3{display:grid;grid-template-rows:auto 1fr;gap:12px;min-height:0}
+.b-fmt .note{font-size:11.5px;line-height:1.35;color:var(--muted);margin-top:4px}
+.r3{display:grid;grid-template-rows:auto auto;gap:12px;min-height:0}
 .b-eng.hz{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto 1fr;column-gap:20px;row-gap:4px;align-items:start}
 .b-eng.hz .big{grid-row:1 / span 2;align-self:center}
 .b-eng.hz p{margin-top:0}
@@ -287,10 +306,7 @@ const stat = (d, cls, n, l, extra='') => `<div class="card rv ${cls}" style="--d
 const magsHTML = c => `<img class="c-l" src="assets/broj1.jpg" alt="${esc(c.covers[0])}">
     <img class="c-r" src="assets/broj3.jpg" alt="${esc(c.covers[2])}">
     <img class="c-c" src="assets/broj2.jpg" alt="${esc(c.covers[1])}">`;
-const booksHTML = () => `<div class="books">
-    <div class="book l"><div class="spine"></div><img src="assets/knjiga-poste.jpg" alt="Uroš Jovičić, Poste restante"></div>
-    <div class="book r"><div class="pages"></div><img src="assets/knjiga-galeano.jpg" alt="Eduardo Galeano, Fudbal na suncu i u seni"></div>
-  </div>`;
+const booksHTML = () => `<img class="kb" src="assets/knjige.png" alt="Uroš Jovičić, Poste restante · Eduardo Galeano, Fudbal na suncu i u seni" width="1212" height="880">`;
 const rotator = c => `<div class="rot rv" data-rot style="--d:0">
   <div class="layer mag">${magsHTML(c)}</div>
   <div class="layer bk">${booksHTML()}</div>
@@ -379,22 +395,21 @@ function bindReveal(){
   });
 }
 
-function startRotation(rot){
-  clearInterval(timer);
-  app.querySelectorAll('[data-rot]').forEach(r=>r.classList.remove('books'));
-  timer = setInterval(() => rot.classList.toggle('books'), 3000);
-}
+// Rotator: polls visibility (no reliance on scroll events / observers).
+// On entering the viewport it shows the magazines, then swaps every 3 s in a loop.
 function bindRotators(){ checkRotators(); }
 function checkRotators(){
+  const now = Date.now(), vh = window.innerHeight || document.documentElement.clientHeight;
   app.querySelectorAll('[data-rot]').forEach(rot => {
-    if (!rot.offsetParent) { rot._vis = false; return; }
-    const r = rot.getBoundingClientRect(), vh = window.innerHeight;
-    const vis = r.top < vh * 0.85 && r.bottom > vh * 0.15;
-    if (vis && !rot._vis) startRotation(rot);
-    if (!vis && rot._vis) { clearInterval(timer); rot.classList.remove('books'); }
+    const r = rot.getBoundingClientRect();
+    const vis = r.height > 0 && r.top < vh * 0.9 && r.bottom > vh * 0.1;
+    if (vis && !rot._vis) { rot.classList.remove('show-books'); rot._next = now + 3000; }
+    else if (vis && now >= rot._next) { rot.classList.toggle('show-books'); rot._next = now + 3000; }
+    else if (!vis && rot._vis) rot.classList.remove('show-books');
     rot._vis = vis;
   });
 }
+timer = setInterval(checkRotators, 200);
 
 const intro = document.getElementById('intro');
 const ov = document.getElementById('ov'), hint = document.getElementById('hint');
@@ -416,7 +431,7 @@ function paintIntro(){
   c2.style.display = n >= a.length ? 'inline-block' : 'none';
 }
 let ticking = false;
-window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { paintIntro(); checkRotators(); ticking = false; }); } }, { passive: true });
+window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { paintIntro(); ticking = false; }); } }, { passive: true });
 window.addEventListener('resize', () => { paintIntro(); checkRotators(); });
 
 document.addEventListener('click', e => {
