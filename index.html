@@ -65,12 +65,13 @@ h1,p{margin:0}
 .bk{opacity:0;transform:scale(.96) translateY(10px);pointer-events:none}
 .rot.books .mag{opacity:0;transform:scale(.96) translateY(10px)}
 .rot.books .bk{opacity:1;transform:none}
-.mag img{position:absolute;aspect-ratio:.7;object-fit:cover}
+.mag img{position:absolute;object-fit:cover}
+.c-l,.c-r{height:calc(var(--sw) / .7)}.c-c{height:calc(var(--cw) / .7)}
 .c-l{left:4px;top:30px;width:var(--sw);transform:rotate(-8deg);box-shadow:var(--sh-md)}
 .c-r{right:4px;top:30px;width:var(--sw);transform:rotate(8deg);box-shadow:var(--sh-md)}
 .c-c{left:50%;top:0;width:var(--cw);margin-left:calc(var(--cw) / -2);box-shadow:var(--sh-lg);z-index:2}
 .books{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:var(--bg);perspective:1100px}
-.book{position:relative;width:var(--bw);aspect-ratio:.7;transform-style:preserve-3d}
+.book{position:relative;width:var(--bw);height:calc(var(--bw) / .7);flex:none;-webkit-transform-style:preserve-3d;transform-style:preserve-3d}
 .book.l{transform:rotateY(24deg) rotateZ(-3deg)}
 .book.r{transform:rotateY(-24deg) rotateZ(3deg)}
 .book img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;box-shadow:var(--sh-lg)}
@@ -162,9 +163,10 @@ h1,p{margin:0}
 .d-left{display:flex;flex-direction:column}
 .d-left h1{font-size:clamp(40px,3.6vw,60px);line-height:1;margin-bottom:14px;font-weight:600;letter-spacing:-.02em;text-wrap:balance}
 .d-left p{font-size:clamp(14.5px,1.1vw,17px);line-height:1.45;text-wrap:pretty}
-.d .rot{height:300px;margin-top:auto;padding-top:24px;max-width:400px;--cw:192px;--sw:150px;--bw:160px;--bt:20px;--bg:36px}
-.d-addr{font-size:11.5px;line-height:1.45;margin-top:22px;color:var(--muted);font-style:normal}
-.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:auto minmax(250px,1fr) minmax(250px,1fr);gap:12px}
+.d .rot.mags{height:272px;margin:32px 0 0;max-width:390px;--cw:180px;--sw:140px}
+.d .rot.bks{height:250px;margin:14px 0 0;max-width:390px;--bw:152px;--bt:20px;--bg:36px}
+.d-addr{font-size:11.5px;line-height:1.45;margin-top:auto;padding-top:24px;color:var(--muted);font-style:normal}
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:auto minmax(220px,1fr) minmax(220px,1fr);gap:12px}
 .row1{grid-column:1 / span 4;display:grid;grid-template-columns:1fr 1.3fr .8fr 1fr 1.1fr;gap:12px}
 .row1 .card{justify-content:space-between;min-height:112px;gap:10px}
 .row1 .num{font-size:clamp(20px,1.9vw,28px);color:var(--blue-d);white-space:nowrap}
@@ -191,6 +193,11 @@ h1,p{margin:0}
 .b-fmt{gap:9px}
 .b-fmt .f{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600}
 .b-fmt .note{font-size:11.5px;line-height:1.35;color:var(--muted);margin-top:auto}
+.r3{display:grid;grid-template-rows:auto 1fr;gap:12px;min-height:0}
+.b-eng.hz{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto 1fr;column-gap:20px;row-gap:4px;align-items:start}
+.b-eng.hz .big{grid-row:1 / span 2;align-self:center}
+.b-eng.hz p{margin-top:0}
+.b-fmt.hz .fl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 16px}
 
 @media (prefers-reduced-motion:reduce){.rv{transition:none;opacity:1;transform:none}.layer{transition:none}.caret{animation:none}}
 </style>
@@ -277,17 +284,19 @@ const pg = k => `<div class="pg ${k}">${PGI[k]}</div>`;
 const toggle = () => `<div class="lang" role="group" aria-label="Jezik / Language">${['SR','EN'].map(l=>`<button type="button" data-lang="${l}" class="${l===lang?'on':''}" aria-pressed="${l===lang}">${l}</button>`).join('')}</div>`;
 const sh = (n, l) => `<div class="sh"><span class="sn">${n}</span><span class="cap">${esc(l)}</span></div>`;
 const stat = (d, cls, n, l, extra='') => `<div class="card rv ${cls}" style="--d:${d}"${extra}><div class="num">${esc(n)}</div><div>${esc(l)}</div></div>`;
-const rotator = c => `<div class="rot rv" data-rot style="--d:0">
-  <div class="layer mag">
-    <img class="c-l" src="assets/broj1.jpg" alt="${esc(c.covers[0])}">
+const magsHTML = c => `<img class="c-l" src="assets/broj1.jpg" alt="${esc(c.covers[0])}">
     <img class="c-r" src="assets/broj3.jpg" alt="${esc(c.covers[2])}">
-    <img class="c-c" src="assets/broj2.jpg" alt="${esc(c.covers[1])}">
-  </div>
-  <div class="layer bk" aria-hidden="true"><div class="books">
+    <img class="c-c" src="assets/broj2.jpg" alt="${esc(c.covers[1])}">`;
+const booksHTML = () => `<div class="books">
     <div class="book l"><div class="spine"></div><img src="assets/knjiga-poste.jpg" alt="Uroš Jovičić, Poste restante"></div>
     <div class="book r"><div class="pages"></div><img src="assets/knjiga-galeano.jpg" alt="Eduardo Galeano, Fudbal na suncu i u seni"></div>
-  </div></div>
+  </div>`;
+const rotator = c => `<div class="rot rv" data-rot style="--d:0">
+  <div class="layer mag">${magsHTML(c)}</div>
+  <div class="layer bk">${booksHTML()}</div>
 </div>`;
+const stacked = c => `<div class="rot mags rv" style="--d:1"><div class="layer mag">${magsHTML(c)}</div></div>
+    <div class="rot bks rv" style="--d:3"><div class="layer">${booksHTML()}</div></div>`;
 
 function mobile(c){
   const hc = ['blue','mustard','paper','green'];
@@ -328,7 +337,7 @@ function desktop(c){
   <header class="d-head"><img src="assets/logo-ink.png" alt="NULA NULA" width="328" height="132">
     <div class="right"><div class="cap">Slow football · ${esc(c.kicker)}</div><a href="mailto:${EMAIL}">${EMAIL}</a>${toggle()}</div></header>
   <div class="d-grid">
-    <div class="d-left"><h1>${esc(c.h1)}</h1><p>${esc(c.lede)}</p>${rotator(c)}<address class="d-addr">NULA NULA IZDAVAŠTVO d.o.o. · Ivana Bogdanovića Vanjke 13, 11500 Obrenovac, Srbija</address></div>
+    <div class="d-left"><h1>${esc(c.h1)}</h1><p>${esc(c.lede)}</p>${stacked(c)}<address class="d-addr">NULA NULA IZDAVAŠTVO d.o.o. · Ivana Bogdanovića Vanjke 13, 11500 Obrenovac, Srbija</address></div>
     <div class="bento">
       <div class="row1">${c.hero5.map((s,i)=>stat(i,'paper',s[0],s[1])).join('')}</div>
       <div class="card gt span2 b-reader rv" style="--d:5"><div class="b-cap">01 · ${esc(c.s1)}</div>
@@ -338,17 +347,19 @@ function desktop(c){
       <div class="card mustard b-eng rv" style="--d:7"><div class="b-cap">${esc(c.eng2[1])}</div><div class="big">${esc(c.eng2[0])}</div><p>${esc(c.eng2[2])}</p></div>
       <div class="card paper span2 b-psy rv" style="--d:8"><div class="b-cap">02 · ${esc(c.s2)}</div>
         ${c.psy.map(p=>`<div><b>${esc(p[0])}</b><span>${esc(p[1])}</span></div>`).join('')}</div>
-      <div class="card green b-eng rv" style="--d:9"><div class="b-cap">${esc(c.eng3[1])}</div><div class="big">${esc(c.eng3[0])}</div><p>${esc(c.eng3[2])}</p></div>
-      <div class="card paper b-fmt sm rv" style="--d:10"><div class="b-cap">${esc(c.s6)}</div>
-        ${c.formats.map((f,i)=>`<div class="f">${pg(PG[i])}<span>${esc(f[0])}</span></div>`).join('')}
-        <div class="note">${esc(c.s6lede)}</div></div>
+      <div class="span2 r3">
+        <div class="card green b-eng hz rv" style="--d:9"><div class="big">${esc(c.eng3[0])}</div><div class="b-cap">${esc(c.eng3[1])}</div><p>${esc(c.eng3[2])}</p></div>
+        <div class="card paper b-fmt hz sm rv" style="--d:10"><div class="b-cap">${esc(c.s6)}</div>
+          <div class="fl">${c.formats.map((f,i)=>`<div class="f">${pg(PG[i])}<span>${esc(f[0])}</span></div>`).join('')}</div>
+          <div class="note">${esc(c.s6lede)}</div></div>
+      </div>
     </div>
   </div>
 </div>`;
 }
 
 const app = document.getElementById('app');
-let io, rio, timer;
+let io, timer;
 function render(){
   const c = COPY[lang];
   document.documentElement.lang = lang === 'SR' ? 'sr' : 'en';
@@ -373,15 +384,16 @@ function startRotation(rot){
   app.querySelectorAll('[data-rot]').forEach(r=>r.classList.remove('books'));
   timer = setInterval(() => rot.classList.toggle('books'), 3000);
 }
-function bindRotators(){
-  rio && rio.disconnect();
-  const rots = app.querySelectorAll('[data-rot]');
-  if (!('IntersectionObserver' in window)) { rots[0] && startRotation(rots[0]); return; }
-  rio = new IntersectionObserver(es => es.forEach(e => {
-    const was = e.target._vis; e.target._vis = e.isIntersecting;
-    if (e.isIntersecting && !was) startRotation(e.target);
-  }), { threshold: 0.4 });
-  rots.forEach(r => rio.observe(r));
+function bindRotators(){ checkRotators(); }
+function checkRotators(){
+  app.querySelectorAll('[data-rot]').forEach(rot => {
+    if (!rot.offsetParent) { rot._vis = false; return; }
+    const r = rot.getBoundingClientRect(), vh = window.innerHeight;
+    const vis = r.top < vh * 0.85 && r.bottom > vh * 0.15;
+    if (vis && !rot._vis) startRotation(rot);
+    if (!vis && rot._vis) { clearInterval(timer); rot.classList.remove('books'); }
+    rot._vis = vis;
+  });
 }
 
 const intro = document.getElementById('intro');
@@ -404,8 +416,8 @@ function paintIntro(){
   c2.style.display = n >= a.length ? 'inline-block' : 'none';
 }
 let ticking = false;
-window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { paintIntro(); ticking = false; }); } }, { passive: true });
-window.addEventListener('resize', paintIntro);
+window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { paintIntro(); checkRotators(); ticking = false; }); } }, { passive: true });
+window.addEventListener('resize', () => { paintIntro(); checkRotators(); });
 
 document.addEventListener('click', e => {
   const b = e.target.closest('[data-lang]');
