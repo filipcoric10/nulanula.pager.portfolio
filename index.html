@@ -184,7 +184,8 @@ h1,p{margin:0}
 .d-left p{font-size:clamp(14.5px,1.1vw,17px);line-height:1.45;text-wrap:pretty}
 .d .rot.mags{height:244px;margin:28px 0 0;max-width:380px;--cw:164px;--sw:128px}
 .d .rot.bks{height:230px;margin:14px 0 0;max-width:380px;--kw:310px}
-.d-addr{font-size:11.5px;line-height:1.45;padding-top:18px;color:var(--muted);font-style:normal}
+.d-foot{margin-top:auto;padding-top:28px}
+.d-addr{font-size:12px;line-height:1.45;color:var(--muted);font-style:normal}
 .bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:auto 1fr 1fr;gap:12px;align-self:stretch}
 .row1{grid-column:1 / span 4;display:grid;grid-template-columns:1fr 1.3fr .8fr 1fr 1.1fr;gap:12px}
 .row1 .card{justify-content:space-between;min-height:112px;gap:10px}
@@ -197,8 +198,8 @@ h1,p{margin:0}
 .b-reader .grid{flex:1;align-content:space-evenly}
 .b-reader .b-cap{color:var(--green-d)}
 .b-reader .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
-.b-reader .num{font-size:22px;color:var(--green-d)}
-.b-reader .grid div div:last-child{font-size:12px;line-height:1.35;margin-top:2px}
+.b-reader .num{font-size:30px;color:var(--green-d)}
+.b-reader .grid div div:last-child{font-size:14.5px;line-height:1.4;margin-top:4px}
 .b-nl{gap:14px}
 .b-nl .num{font-size:40px;letter-spacing:-.02em}
 .b-nl div div:last-child{font-size:12.5px;line-height:1.35;margin-top:2px}
@@ -208,8 +209,8 @@ h1,p{margin:0}
 .b-eng p{font-size:12.5px;line-height:1.4;margin-top:6px;text-wrap:pretty}
 .b-psy{gap:10px}
 .b-psy .b-cap,.b-fmt .b-cap{color:var(--blue-d)}
-.b-psy b{font-size:13.5px;font-weight:600;display:block;line-height:1.25}
-.b-psy span{font-size:11.5px;line-height:1.36;display:block;margin-top:1px}
+.b-psy b{font-size:17px;font-weight:600;display:block;line-height:1.25}
+.b-psy span{font-size:14px;line-height:1.42;display:block;margin-top:3px}
 .b-fmt{gap:9px}
 .b-fmt .f{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600}
 .b-fmt .note{font-size:11.5px;line-height:1.35;color:var(--muted);margin-top:4px}
@@ -218,6 +219,9 @@ h1,p{margin:0}
 .b-eng.hz{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto 1fr;column-gap:20px;row-gap:4px;align-items:start}
 .b-eng.hz .big{grid-row:1 / span 2;align-self:center}
 .b-eng.hz p{margin-top:0}
+.bento .b-green{justify-content:flex-start;gap:8px}
+.b-green .big{margin-bottom:4px}
+.b-green p{margin-top:0}
 .b-fmt.hz .fl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 16px}
 
 @media (prefers-reduced-motion:reduce){.rv{transition:none;opacity:1;transform:none}.layer{transition:none}.caret{animation:none}}
@@ -355,7 +359,7 @@ function desktop(c){
   <header class="d-head"><img src="assets/logo-ink.png" alt="NULA NULA" width="328" height="132">
     <div class="right"><div class="cap">Slow football · ${esc(c.kicker)}</div><a href="mailto:${EMAIL}">${EMAIL}</a>${toggle()}</div></header>
   <div class="d-grid">
-    <div class="d-left"><h1>${esc(c.h1)}</h1><p>${esc(c.lede)}</p>${stacked(c)}<address class="d-addr">NULA NULA IZDAVAŠTVO d.o.o. · Ivana Bogdanovića Vanjke 13, 11500 Obrenovac, Srbija</address></div>
+    <div class="d-left"><h1>${esc(c.h1)}</h1><p>${esc(c.lede)}</p>${stacked(c)}</div>
     <div class="bento">
       <div class="row1">${c.hero5.map((s,i)=>stat(i,'paper',s[0],s[1])).join('')}</div>
       <div class="card gt span2 b-reader rv" style="--d:5"><div class="b-cap">01 · ${esc(c.s1)}</div>
@@ -366,13 +370,14 @@ function desktop(c){
       <div class="card paper span2 b-psy rv" style="--d:8"><div class="b-cap">02 · ${esc(c.s2)}</div>
         ${c.psy.map(p=>`<div><b>${esc(p[0])}</b><span>${esc(p[1])}</span></div>`).join('')}</div>
       <div class="span2 r3">
-        <div class="card green b-eng hz rv" style="--d:9"><div class="big">${esc(c.eng3[0])}</div><div class="b-cap">${esc(c.eng3[1])}</div><p>${esc(c.eng3[2])}</p></div>
+        <div class="card green b-eng b-green rv" style="--d:9"><div class="big">${esc(c.eng3[0])}</div><div class="b-cap">${esc(c.eng3[1])}</div><p>${esc(c.eng3[2])}</p></div>
         <div class="card paper b-fmt hz sm rv" style="--d:10"><div class="b-cap">${esc(c.s6)}</div>
           <div class="fl">${c.formats.map((f,i)=>`<div class="f">${pg(PG[i])}<span>${esc(f[0])}</span></div>`).join('')}</div>
           <div class="note">${esc(c.s6lede)}</div></div>
       </div>
     </div>
   </div>
+  <footer class="d-foot"><address class="d-addr">NULA NULA IZDAVAŠTVO d.o.o. · Ivana Bogdanovića Vanjke 13, 11500 Obrenovac, Srbija</address></footer>
 </div>`;
 }
 
