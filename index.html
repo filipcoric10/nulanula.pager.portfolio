@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NULA NULA · Media kit 2026</title>
+<meta name="description" content="NULA NULA – slow football magazin. Čitalac koji ne žuri: publika, angažovanost i saradnja.">
+<meta property="og:title" content="NULA NULA · Media kit 2026">
+<meta property="og:description" content="Izdavačka kuća NULA NULA je kulturni iskorak koji supkulture pretvara u mainstream.">
+<meta property="og:image" content="assets/broj3.jpg">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1E1C1B;--muted:#4A463F;--soft:#5A554E;--paper:#F4F2EC;--blue:#4A4FC2;--blue-d:#3E43B0;--blue-t:#ECEDFA;--green:#2F9A48;--green-d:#237A38;--green-t:#E7F4EA;--mustard:#E2A93B;--r:4px;--sh-md:0 3px 10px rgba(45,43,43,.16);--sh-lg:0 12px 32px rgba(45,43,43,.22);--pad:16px}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:var(--ink);font-family:"Source Serif 4",Georgia,serif;-webkit-font-smoothing:antialiased;font-variant-numeric:lining-nums}
+img{display:block;max-width:100%}
+a{color:var(--blue-d);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--ink)}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+h1,p{margin:0}
+
+/* intro */
+.intro{position:relative;height:calc(100svh + 300vh)}
+.pin{position:sticky;top:0;height:100svh;overflow:hidden;background:#fff}
+.brand{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(18px,3vh,30px);padding:0 var(--pad)}
+.sf{display:flex;align-items:center;gap:14px;font-size:clamp(11px,1.2vw,15px);letter-spacing:.5em;text-transform:uppercase;font-weight:600}
+.sf span{margin-right:-.5em}
+.big-logo{width:100%;max-width:min(860px,92vw);height:auto}
+.hint{position:absolute;left:0;right:0;bottom:28px;display:flex;justify-content:center;gap:8px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--soft)}
+.ov{position:absolute;inset:0;background:rgba(18,17,16,.8);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);opacity:0;pointer-events:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:0 var(--pad)}
+.ov p{color:#fff;font-size:23px;line-height:1.3;text-align:center;text-wrap:balance;min-height:1.3em;max-width:1200px}
+.ov em{font-style:italic}
+.caret{display:inline-block;width:2px;height:1em;background:var(--mustard);margin-left:3px;vertical-align:-.12em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* shared */
+.cap{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+.sh{display:flex;gap:10px;align-items:baseline}
+.sn{font-size:13px;font-weight:600;color:var(--blue-d)}
+.card{border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:4px}
+.blue{background:var(--blue);color:#fff}.blue a{color:#fff}
+.mustard{background:var(--mustard);color:var(--ink)}
+.green{background:var(--green-d);color:#fff}
+.paper{background:var(--paper)}
+.gt{background:var(--green-t)}
+.bt{background:var(--blue-t)}
+.num{font-weight:600;line-height:1.05;letter-spacing:-.01em}
+.lang{display:flex;border:1px solid var(--ink);border-radius:2px;overflow:hidden}
+.lang button{background:transparent;color:var(--ink);border:0;font-weight:600;font-size:12px;letter-spacing:.12em;padding:0 12px;min-width:44px;height:32px;cursor:pointer}
+.lang button:hover{background:var(--blue-t)}
+.lang button.on{background:var(--blue);color:#fff}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(36px) scale(.96);transition:opacity .6s ease calc(var(--d,0)*90ms),transform .85s cubic-bezier(.2,.8,.2,1) calc(var(--d,0)*90ms)}
+.rv.in{opacity:1;transform:none}
+.rv.instant{transition:none}
+
+/* rotator */
+.rot{position:relative;width:100%;margin-inline:auto}
+.layer{position:absolute;inset:0;transition:opacity .8s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.bk{opacity:0;transform:scale(.96) translateY(10px);pointer-events:none}
+.rot.books .mag{opacity:0;transform:scale(.96) translateY(10px)}
+.rot.books .bk{opacity:1;transform:none}
+.mag img{position:absolute;aspect-ratio:.7;object-fit:cover}
+.c-l{left:4px;top:30px;width:var(--sw);transform:rotate(-8deg);box-shadow:var(--sh-md)}
+.c-r{right:4px;top:30px;width:var(--sw);transform:rotate(8deg);box-shadow:var(--sh-md)}
+.c-c{left:50%;top:0;width:var(--cw);margin-left:calc(var(--cw) / -2);box-shadow:var(--sh-lg);z-index:2}
+.books{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:var(--bg);perspective:1100px}
+.book{position:relative;width:var(--bw);aspect-ratio:.7;transform-style:preserve-3d}
+.book.l{transform:rotateY(24deg) rotateZ(-3deg)}
+.book.r{transform:rotateY(-24deg) rotateZ(3deg)}
+.book img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;box-shadow:var(--sh-lg)}
+.spine{position:absolute;left:0;top:0;width:var(--bt);height:100%;background:linear-gradient(90deg,#123B3E,#23666A);transform-origin:left center;transform:rotateY(90deg)}
+.pages{position:absolute;right:0;top:0;width:var(--bt);height:100%;background:repeating-linear-gradient(90deg,#F6F3EC 0 1px,#DDD7CB 1px 2px);transform-origin:right center;transform:rotateY(-90deg)}
+
+/* format pictograms */
+.pg{width:30px;height:40px;border-radius:1px;flex:none}
+.pg.full{background:var(--blue)}
+.pg.half{border:1.5px solid var(--ink);display:flex;flex-direction:column;justify-content:flex-end}.pg.half i{height:50%;background:var(--blue)}
+.pg.spread{display:flex;gap:2px;width:62px}.pg.spread i{flex:1;background:var(--blue)}
+.pg.cover{background:var(--mustard);border:2px solid var(--ink)}
+.pg.native{border:1.5px solid var(--ink);padding:5px 4px;display:flex;flex-direction:column;gap:3px}.pg.native i{height:2px;background:var(--ink)}.pg.native i:first-child{height:9px;background:var(--green)}.pg.native i:last-child{width:70%}
+.pg.digital{width:24px;border:1.5px solid var(--ink);border-radius:4px;padding:4px 3px}.pg.digital i{display:block;height:100%;background:var(--blue);border-radius:1px}
+.sm .pg{transform:scale(.48);transform-origin:left center;margin-right:-15px}
+.sm .pg.spread{margin-right:-32px}
+
+/* mobile / tablet */
+.m-first{min-height:100svh;padding:18px var(--pad) 16px;display:flex;flex-direction:column}
+.m-head{display:flex;justify-content:space-between;align-items:center}
+.m-head img{height:34px;width:auto}
+.m-kick{margin-top:20px;color:var(--blue-d)}
+.m-h1{font-size:36px;line-height:1.04;margin:8px 0;font-weight:600;letter-spacing:-.015em;text-wrap:balance}
+.m-lede{font-size:15px;line-height:1.45;text-wrap:pretty}
+.m .rot{height:252px;max-width:360px;margin-top:18px;--cw:168px;--sw:128px;--bw:138px;--bt:18px;--bg:26px}
+.g4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.g3{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.m-stats{margin-top:18px}
+.m-stats .card{padding:12px 14px;gap:2px}
+.m-stats .num{font-size:27px}
+.m-stats .card div:last-child{font-size:12.5px;line-height:1.3}
+.m-hint{margin-top:auto;padding-top:16px;display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--blue-d)}
+.m-body{padding:36px var(--pad) 40px;display:flex;flex-direction:column;gap:48px}
+.m-sec{display:flex;flex-direction:column;gap:14px}
+.m-sec>p{font-size:15px;line-height:1.45;text-wrap:pretty}
+.m-sec .it{font-size:21px;line-height:1.25;font-style:italic;text-wrap:pretty}
+.demo .card{min-height:132px;padding:14px}
+.demo .num{font-size:24px;color:var(--green-d)}
+.demo .card div:last-child{font-size:13px;line-height:1.35}
+.psy .card{padding:18px 16px;gap:6px}
+.psy h3{margin:0;font-size:19px;font-weight:600;line-height:1.2}
+.psy p{font-size:14.5px;line-height:1.45;text-wrap:pretty}
+.eng{padding:20px 18px;gap:6px}
+.eng .big{font-size:60px;font-weight:600;line-height:1;letter-spacing:-.02em}
+.eng p{font-size:14.5px;line-height:1.45;text-wrap:pretty}
+.nl{padding:20px 18px;gap:14px}
+.nl-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.nl-row .num{font-size:40px;letter-spacing:-.02em}
+.nl-row div div:last-child{font-size:13px;line-height:1.35;white-space:pre-line;margin-top:4px}
+.small-cards .card{min-height:96px}
+.small-cards .num{font-size:18px;color:var(--blue-d)}
+.small-cards .card div:last-child{font-size:12.5px;line-height:1.35}
+.dig .num{font-size:24px}
+.reach{padding:18px 16px}
+.reach .num{font-size:40px;letter-spacing:-.02em}
+.reach div:last-child{font-size:14px;line-height:1.35}
+.fmt .card{gap:12px}
+.fmt .card b{font-size:16px;font-weight:600;display:block}
+.fmt .card span{font-size:12.5px;color:var(--muted)}
+.contact{padding:24px 18px;gap:10px;margin-bottom:24px}
+.contact a{font-size:23px;font-weight:600}
+.contact address{font-style:normal;font-size:14px;line-height:1.5}
+.contact img{height:28px;width:auto;margin-top:12px}
+
+@media (min-width:600px){
+  :root{--pad:32px}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .m-h1{font-size:48px}
+  .m-lede,.m-sec>p{font-size:17px;max-width:640px}
+  .m .rot{height:320px;max-width:460px;--cw:214px;--sw:164px;--bw:176px;--bt:22px;--bg:34px}
+  .eng-wrap{grid-template-columns:repeat(2,1fr)}
+  .ov p{font-size:28px}
+}
+
+/* desktop */
+.d{display:none}
+@media (min-width:1100px){
+  .m{display:none}
+  .d{display:flex;flex-direction:column;min-height:100vh;padding:26px 48px 28px}
+  .ov{gap:10px;padding:0 48px}
+  .ov p{font-size:clamp(22px,2.1vw,34px);white-space:nowrap}
+}
+.d-head{display:flex;justify-content:space-between;align-items:center}
+.d-head img{height:40px;width:auto}
+.d-head .right{display:flex;align-items:center;gap:28px}
+.d-head a{font-size:14px;font-weight:600}
+.d-grid{flex:1;display:grid;grid-template-columns:clamp(320px,30vw,460px) minmax(0,1fr);gap:40px;margin-top:24px}
+.d-left{display:flex;flex-direction:column}
+.d-left h1{font-size:clamp(40px,3.6vw,60px);line-height:1;margin-bottom:14px;font-weight:600;letter-spacing:-.02em;text-wrap:balance}
+.d-left p{font-size:clamp(14.5px,1.1vw,17px);line-height:1.45;text-wrap:pretty}
+.d .rot{height:300px;margin-top:auto;padding-top:24px;max-width:400px;--cw:192px;--sw:150px;--bw:160px;--bt:20px;--bg:36px}
+.d-addr{font-size:11.5px;line-height:1.45;margin-top:22px;color:var(--muted);font-style:normal}
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:auto minmax(250px,1fr) minmax(250px,1fr);gap:12px}
+.row1{grid-column:1 / span 4;display:grid;grid-template-columns:1fr 1.3fr .8fr 1fr 1.1fr;gap:12px}
+.row1 .card{justify-content:space-between;min-height:112px;gap:10px}
+.row1 .num{font-size:clamp(20px,1.9vw,28px);color:var(--blue-d);white-space:nowrap}
+.row1 .card div:last-child{font-size:12px;line-height:1.3}
+.span2{grid-column:span 2}
+.bento .card{padding:16px}
+.b-cap{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+.b-reader{gap:12px}
+.b-reader .b-cap{color:var(--green-d)}
+.b-reader .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
+.b-reader .num{font-size:22px;color:var(--green-d)}
+.b-reader .grid div div:last-child{font-size:12px;line-height:1.35;margin-top:2px}
+.b-nl{gap:14px}
+.b-nl .num{font-size:40px;letter-spacing:-.02em}
+.b-nl div div:last-child{font-size:12.5px;line-height:1.35;margin-top:2px}
+.b-nl .last{margin-top:auto}
+.b-eng{gap:6px}
+.b-eng .big{font-size:46px;font-weight:600;line-height:1;letter-spacing:-.02em}
+.b-eng p{font-size:12px;line-height:1.4;margin-top:auto;text-wrap:pretty}
+.b-psy{gap:10px}
+.b-psy .b-cap,.b-fmt .b-cap{color:var(--blue-d)}
+.b-psy b{font-size:13.5px;font-weight:600;display:block;line-height:1.25}
+.b-psy span{font-size:11.5px;line-height:1.36;display:block;margin-top:1px}
+.b-fmt{gap:9px}
+.b-fmt .f{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600}
+.b-fmt .note{font-size:11.5px;line-height:1.35;color:var(--muted);margin-top:auto}
+
+@media (prefers-reduced-motion:reduce){.rv{transition:none;opacity:1;transform:none}.layer{transition:none}.caret{animation:none}}
+</style>
+</head>
+<body>
+
+<section class="intro" id="intro" aria-label="NULA NULA">
+  <div class="pin">
+    <div class="brand">
+      <div class="sf"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="7" cy="7" r="6"/><ellipse cx="7" cy="7" rx="2.6" ry="6"/><line x1="1" y1="7" x2="13" y2="7"/></svg><span>Slow football</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="7" cy="7" r="6"/><ellipse cx="7" cy="7" rx="2.6" ry="6"/><line x1="1" y1="7" x2="13" y2="7"/></svg></div>
+      <img class="big-logo" src="assets/logo-black-hd.png" alt="NULA NULA" width="1344" height="409">
+    </div>
+    <div class="hint" id="hint"><span id="hintTxt">Skrolujte za više</span><span aria-hidden="true">↓</span></div>
+    <div class="ov" id="ov" aria-live="off">
+      <p><span id="t1"></span><i class="caret" id="c1"></i></p>
+      <p><span id="t2a"></span><em id="t2b"></em><span id="t2c"></span><i class="caret" id="c2" style="display:none"></i></p>
+    </div>
+  </div>
+</section>
+
+<main id="app"></main>
+
+<script>
+(function(){
+const COPY = {
+  SR: {
+    manifesto: ['Izdavačka kuća NULA NULA je kulturni iskorak koji supkulture pretvara u mainstream.', ['Mesto ', 'slow footballa', ' i drugačijeg načina.']],
+    kicker: 'Media kit 2026',
+    h1: 'Čitalac koji ne žuri.',
+    lede: 'Naš čitalac ne traži brze rezultate utakmica i senzacionalne naslove – za to služe portali. Čitalac NULA NULE je fudbalski romantičar, kulturno osvešten pojedinac koji ceni dobar dizajn, duboke analize, istoriju igre i fudbalsku kulturu.',
+    ledeShort: 'Fudbalski romantičar koji ceni dobar dizajn, duboke analize, istoriju igre i fudbalsku kulturu.',
+    scroll: 'Skrolujte za više',
+    s1: 'Čitalac', s2: 'Slow football psihografija', s3: 'Angažovanost', s4: 'U brojkama', s5: 'Digitalni doseg', s6: 'Saradnja',
+    s3lede: 'Zašto je tromesečni magazin bolji za reklamu od dnevnog portala.',
+    s6lede: 'Oglasi u magazinu i digitalni paketi. Uslovi na upit.',
+    contact: 'Kontakt',
+    hero: [['2.500','štampanih i rasprodanih primeraka trećeg broja'],['94%','čitalaca ne baca magazin'],['3h+','vreme čitanja jednog broja'],['3','čitaoca po primerku']],
+    hero5: [['2.500','tiraž'],['19.500','pojedinačnih čitalaca prva tri broja'],['16','zemalja naručuje'],['3h+','vreme čitanja jednog broja'],['360.000','mesečni reach na objavama partnerskih platformi']],
+    demo: [['85 : 15','muškarci / žene, uz stalni rast ženske publike'],['25–45','godina, fokus na 30–39; profesionalno ostvareni i finansijski nezavisni'],['72%','visoko obrazovanje; kreativci, programeri, menadžeri i preduzetnici'],['Premium','srednja i visoka kupovna moć; budžet za premium proizvode, putovanja i slobodno vreme']],
+    demoShort: ['muškarci / žene, ženska publika raste','godina, fokus na 30–39','visoko obrazovanje: kreativci, programeri, menadžeri, preduzetnici','srednja i visoka kupovna moć'],
+    psy: [['Fudbal kao kultura','Retro dresovi, dobri dokumentarci, putovanja na utakmice i lokalna fudbalska kultura. Zanimaju ga priče o ljudima, ne samo statistika.'],['Premium životni stil','Kvalitet ispred kvantiteta: craft pivo ili dobra kafa, dobar komad odeće. Tehnički pismen, a ceni analogni osećaj vrhunskog papira.'],['Održivost i estetika','Privlače ga brendovi koji imaju priču i dobar vizuelni identitet, bez agresivnog pritiska da se nešto kupi.']],
+    eng2: ['94%','Vek trajanja','Magazin se čuva na policama i klub-stolićima kao coffee table book. Reklama živi mesecima, pa i godinama.'],
+    eng3: ['×3','Sekundarna publika','Svaki primerak pročitaju 3 osobe: deli se među prijateljima, stoji u premium kafićima, brijačnicama i konceptualnim radnjama.'],
+    nl: [['55%','otvaranje\nnewslettera'],['1.500+','pretplatnika\nnewslettera']],
+    nums: [['3 × 124','izdanja, po 124 strane'],['6.500','rasprodanih primeraka: 2.000 + 2.000 + 2.500'],['19.500','pojedinačnih čitalaca prva tri broja'],['5–8 h','za čitanje jednog broja'],['16','zemalja iz kojih su stigle narudžbe'],['~10.000','poseta sajtu'],['1.500+','pretplatnika newslettera'],['55%','prosečna stopa otvaranja newslettera'],['8,43%','prosečna stopa klikova']],
+    digital: [['2.340','NULA NULA na Instagramu'],['~60.000','Burazzers na Instagramu (partner)'],['~11.200','Tribina.hr na Instagramu (partner)'],['~50.000','Tribina.hr na YouTubeu (partner)']],
+    formats: [['1/1 strana','Cela strana'],['1/2 strane','Pola strane'],['Duplerica','Oglas preko dve strane'],['Korice','Unutrašnje i zadnja korica'],['Native tekst','Sponzorisana priča u tonu magazina'],['Digitalni paketi','Newsletter i Instagram']],
+    covers: ['Broj 1 · Zima 2026','Broj 2 · Proleće 2026','Broj 3 · Leto 2026']
+  },
+  EN: {
+    manifesto: ['NULA NULA Publishing is a cultural leap that turns subcultures into the mainstream.', ['A home for ', 'slow football', ' and a different way.']],
+    kicker: 'Media kit 2026',
+    h1: 'A reader who takes his time.',
+    lede: 'Our reader isn’t looking for quick match results or sensational headlines – that’s what portals are for. The NULA NULA reader is a football romantic, a culturally aware person who values good design, in-depth analysis, the history of the game and football culture.',
+    ledeShort: 'A football romantic who values good design, in-depth analysis, the history of the game and football culture.',
+    scroll: 'Scroll for more',
+    s1: 'The reader', s2: 'Slow football psychographics', s3: 'Engagement', s4: 'In numbers', s5: 'Digital reach', s6: 'Partnering',
+    s3lede: 'Why a quarterly magazine beats a daily portal for advertising.',
+    s6lede: 'Print ads and digital packages. Terms on request.',
+    contact: 'Contact',
+    hero: [['2,500','copies of issue 3, printed and sold out'],['94%','of readers keep the magazine'],['3h+','reading time per issue'],['3','readers per copy']],
+    hero5: [['2,500','print run'],['19,500','individual readers of the first three issues'],['16','countries ordering'],['3h+','reading time per issue'],['360,000','monthly reach on partner platform posts']],
+    demo: [['85 : 15','men / women, with a steadily growing female readership'],['25–45','years old, focus on 30–39; established and financially independent'],['72%','university-educated; creatives, developers, managers and entrepreneurs'],['Premium','middle to high purchasing power; budget for premium products, travel and leisure']],
+    demoShort: ['men / women, female readership growing','years old, focus on 30–39','university-educated: creatives, developers, managers, entrepreneurs','middle to high purchasing power'],
+    psy: [['Football as culture','Retro shirts, good documentaries, away-day travel and local football culture. Interested in people’s stories, not just statistics.'],['Premium lifestyle','Quality over quantity: craft beer or good coffee, a well-made garment. Tech-literate, yet values the analogue feel of fine paper.'],['Sustainability & aesthetics','Drawn to brands with a story and a strong visual identity that don’t push aggressively to sell.']],
+    eng2: ['94%','Shelf life','Kept on shelves and coffee tables like a coffee table book. Your ad lives for months, even years.'],
+    eng3: ['×3','Pass-along','Each copy is read by 3 people: shared among friends, found in premium cafés, barbershops and concept stores.'],
+    nl: [['55%','newsletter\nopen rate'],['1,500+','newsletter\nsubscribers']],
+    nums: [['3 × 124','issues, 124 pages each'],['6,500','copies sold out: 2,000 + 2,000 + 2,500'],['19,500','individual readers of the first three issues'],['5–8 h','to read one issue'],['16','countries orders came from'],['~10,000','website visits'],['1,500+','newsletter subscribers'],['55%','average newsletter open rate'],['8.43%','average click rate']],
+    digital: [['2,340','NULA NULA on Instagram'],['~60,000','Burazzers on Instagram (partner)'],['~11,200','Tribina.hr on Instagram (partner)'],['~50,000','Tribina.hr on YouTube (partner)']],
+    formats: [['1/1 page','Full page'],['1/2 page','Half page'],['Spread','Across two facing pages'],['Covers','Inside and back cover'],['Native story','Sponsored feature in the magazine’s voice'],['Digital packages','Newsletter and Instagram']],
+    covers: ['No. 1 · Winter 2026','No. 2 · Spring 2026','No. 3 · Summer 2026']
+  }
+};
+const EMAIL = 'redakcija@nulanula.net';
+const ADDR = 'NULA NULA IZDAVAŠTVO d.o.o.<br>Ivana Bogdanovića Vanjke 13<br>11500 Obrenovac, Srbija';
+const PG = ['full','half','spread','cover','native','digital'];
+const PGI = {full:'',half:'<i></i>',spread:'<i></i><i></i>',cover:'',native:'<i></i><i></i><i></i><i></i>',digital:'<i></i>'};
+let lang = localStorage.getItem('nn-lang') || 'SR';
+if (!COPY[lang]) lang = 'SR';
+
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const pg = k => `<div class="pg ${k}">${PGI[k]}</div>`;
+const toggle = () => `<div class="lang" role="group" aria-label="Jezik / Language">${['SR','EN'].map(l=>`<button type="button" data-lang="${l}" class="${l===lang?'on':''}" aria-pressed="${l===lang}">${l}</button>`).join('')}</div>`;
+const sh = (n, l) => `<div class="sh"><span class="sn">${n}</span><span class="cap">${esc(l)}</span></div>`;
+const stat = (d, cls, n, l, extra='') => `<div class="card rv ${cls}" style="--d:${d}"${extra}><div class="num">${esc(n)}</div><div>${esc(l)}</div></div>`;
+const rotator = c => `<div class="rot rv" data-rot style="--d:0">
+  <div class="layer mag">
+    <img class="c-l" src="assets/broj1.jpg" alt="${esc(c.covers[0])}">
+    <img class="c-r" src="assets/broj3.jpg" alt="${esc(c.covers[2])}">
+    <img class="c-c" src="assets/broj2.jpg" alt="${esc(c.covers[1])}">
+  </div>
+  <div class="layer bk" aria-hidden="true"><div class="books">
+    <div class="book l"><div class="spine"></div><img src="assets/knjiga-poste.jpg" alt="Uroš Jovičić, Poste restante"></div>
+    <div class="book r"><div class="pages"></div><img src="assets/knjiga-galeano.jpg" alt="Eduardo Galeano, Fudbal na suncu i u seni"></div>
+  </div></div>
+</div>`;
+
+function mobile(c){
+  const hc = ['blue','mustard','paper','green'];
+  return `<div class="m">
+  <div class="m-first">
+    <div class="m-head"><img src="assets/logo-ink.png" alt="NULA NULA" width="328" height="132">${toggle()}</div>
+    <div class="cap m-kick">Slow football · ${esc(c.kicker)}</div>
+    <h1 class="m-h1">${esc(c.h1)}</h1>
+    <p class="m-lede">${esc(c.ledeShort)}</p>
+    ${rotator(c)}
+    <div class="g4 m-stats">${c.hero.map((h,i)=>stat(i+1, hc[i], h[0], h[1])).join('')}</div>
+    <div class="m-hint"><span>${esc(c.scroll)}</span><span aria-hidden="true">↓</span></div>
+  </div>
+  <div class="m-body">
+    <section class="m-sec">${sh('01', c.s1)}<p>${esc(c.lede)}</p>
+      <div class="g4 demo">${c.demo.map((d,i)=>stat(i,'gt',d[0],d[1])).join('')}</div></section>
+    <section class="m-sec psy">${sh('02', c.s2)}
+      ${c.psy.map((p,i)=>`<div class="card paper rv" style="--d:${i}"><h3>${esc(p[0])}</h3><p>${esc(p[1])}</p></div>`).join('')}</section>
+    <section class="m-sec">${sh('03', c.s3)}<div class="it">${esc(c.s3lede)}</div>
+      <div class="card blue nl rv" style="--d:0"><div class="cap">Newsletter</div><div class="nl-row">${c.nl.map(n=>`<div><div class="num">${esc(n[0])}</div><div>${esc(n[1])}</div></div>`).join('')}</div></div>
+      <div class="eng-wrap" style="display:grid;gap:14px">
+        ${[[c.eng2,'mustard'],[c.eng3,'green']].map(([e,cl],i)=>`<div class="card ${cl} eng rv" style="--d:${i+1}"><div class="cap">${esc(e[1])}</div><div class="big">${esc(e[0])}</div><p>${esc(e[2])}</p></div>`).join('')}
+      </div></section>
+    <section class="m-sec">${sh('04', c.s4)}
+      <div class="g3 small-cards">${c.nums.map((r,i)=>stat(i,'paper',r[0],r[1])).join('')}</div></section>
+    <section class="m-sec">${sh('05', c.s5)}
+      <div class="card blue reach rv" style="--d:0"><div class="num">${esc(c.hero5[4][0])}</div><div>${esc(c.hero5[4][1])}</div></div>
+      <div class="g4 small-cards dig">${c.digital.map((g,i)=>stat(i+1,'bt',g[0],g[1])).join('')}</div></section>
+    <section class="m-sec">${sh('06', c.s6)}<p>${esc(c.s6lede)}</p>
+      <div class="g3 fmt">${c.formats.map((f,i)=>`<div class="card paper rv" style="--d:${i}">${pg(PG[i])}<div><b>${esc(f[0])}</b><span>${esc(f[1])}</span></div></div>`).join('')}</div></section>
+    <section class="card blue contact rv" style="--d:0"><div class="cap">${esc(c.contact)}</div><a href="mailto:${EMAIL}">${EMAIL}</a><address>${ADDR}</address><img src="assets/logo-paper.png" alt="NULA NULA" width="328" height="132"></section>
+  </div>
+</div>`;
+}
+
+function desktop(c){
+  return `<div class="d">
+  <header class="d-head"><img src="assets/logo-ink.png" alt="NULA NULA" width="328" height="132">
+    <div class="right"><div class="cap">Slow football · ${esc(c.kicker)}</div><a href="mailto:${EMAIL}">${EMAIL}</a>${toggle()}</div></header>
+  <div class="d-grid">
+    <div class="d-left"><h1>${esc(c.h1)}</h1><p>${esc(c.lede)}</p>${rotator(c)}<address class="d-addr">NULA NULA IZDAVAŠTVO d.o.o. · Ivana Bogdanovića Vanjke 13, 11500 Obrenovac, Srbija</address></div>
+    <div class="bento">
+      <div class="row1">${c.hero5.map((s,i)=>stat(i,'paper',s[0],s[1])).join('')}</div>
+      <div class="card gt span2 b-reader rv" style="--d:5"><div class="b-cap">01 · ${esc(c.s1)}</div>
+        <div class="grid">${c.demo.map((d,i)=>`<div><div class="num">${esc(d[0])}</div><div>${esc(c.demoShort[i])}</div></div>`).join('')}</div></div>
+      <div class="card blue b-nl rv" style="--d:6"><div class="b-cap">Newsletter</div>
+        ${c.nl.map((n,i)=>`<div class="${i?'last':''}"><div class="num">${esc(n[0])}</div><div>${esc(n[1].replace('\n',' '))}</div></div>`).join('')}</div>
+      <div class="card mustard b-eng rv" style="--d:7"><div class="b-cap">${esc(c.eng2[1])}</div><div class="big">${esc(c.eng2[0])}</div><p>${esc(c.eng2[2])}</p></div>
+      <div class="card paper span2 b-psy rv" style="--d:8"><div class="b-cap">02 · ${esc(c.s2)}</div>
+        ${c.psy.map(p=>`<div><b>${esc(p[0])}</b><span>${esc(p[1])}</span></div>`).join('')}</div>
+      <div class="card green b-eng rv" style="--d:9"><div class="b-cap">${esc(c.eng3[1])}</div><div class="big">${esc(c.eng3[0])}</div><p>${esc(c.eng3[2])}</p></div>
+      <div class="card paper b-fmt sm rv" style="--d:10"><div class="b-cap">${esc(c.s6)}</div>
+        ${c.formats.map((f,i)=>`<div class="f">${pg(PG[i])}<span>${esc(f[0])}</span></div>`).join('')}
+        <div class="note">${esc(c.s6lede)}</div></div>
+    </div>
+  </div>
+</div>`;
+}
+
+const app = document.getElementById('app');
+let io, rio, timer;
+function render(){
+  const c = COPY[lang];
+  document.documentElement.lang = lang === 'SR' ? 'sr' : 'en';
+  document.getElementById('hintTxt').textContent = c.scroll;
+  app.innerHTML = mobile(c) + desktop(c);
+  bindReveal(); bindRotators(); paintIntro();
+}
+
+function bindReveal(){
+  io && io.disconnect();
+  const els = app.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window)) { els.forEach(e=>e.classList.add('in')); return; }
+  io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  els.forEach(el => {
+    const r = el.getBoundingClientRect();
+    if (r.height && r.bottom < 0) el.classList.add('instant','in'); else io.observe(el);
+  });
+}
+
+function startRotation(rot){
+  clearInterval(timer);
+  app.querySelectorAll('[data-rot]').forEach(r=>r.classList.remove('books'));
+  timer = setInterval(() => rot.classList.toggle('books'), 3000);
+}
+function bindRotators(){
+  rio && rio.disconnect();
+  const rots = app.querySelectorAll('[data-rot]');
+  if (!('IntersectionObserver' in window)) { rots[0] && startRotation(rots[0]); return; }
+  rio = new IntersectionObserver(es => es.forEach(e => {
+    const was = e.target._vis; e.target._vis = e.isIntersecting;
+    if (e.isIntersecting && !was) startRotation(e.target);
+  }), { threshold: 0.4 });
+  rots.forEach(r => rio.observe(r));
+}
+
+const intro = document.getElementById('intro');
+const ov = document.getElementById('ov'), hint = document.getElementById('hint');
+const t1 = document.getElementById('t1'), t2 = ['t2a','t2b','t2c'].map(id=>document.getElementById(id));
+const c1 = document.getElementById('c1'), c2 = document.getElementById('c2');
+const cl = v => Math.min(1, Math.max(0, v));
+function paintIntro(){
+  const [a, bp] = COPY[lang].manifesto;
+  const dist = Math.max(1, intro.offsetHeight - window.innerHeight);
+  const p = cl(-intro.getBoundingClientRect().top / dist);
+  ov.style.opacity = cl(p / 0.08);
+  hint.style.opacity = 1 - cl(p / 0.05);
+  const total = a.length + bp.join('').length;
+  const n = Math.round(cl((p - 0.08) / 0.8) * total);
+  t1.textContent = a.slice(0, Math.min(n, a.length));
+  let rest = Math.max(0, n - a.length);
+  t2.forEach((node, i) => { const take = Math.min(rest, bp[i].length); node.textContent = bp[i].slice(0, take); rest -= take; });
+  c1.style.display = n < a.length ? 'inline-block' : 'none';
+  c2.style.display = n >= a.length ? 'inline-block' : 'none';
+}
+let ticking = false;
+window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { paintIntro(); ticking = false; }); } }, { passive: true });
+window.addEventListener('resize', paintIntro);
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-lang]');
+  if (!b || b.dataset.lang === lang) return;
+  lang = b.dataset.lang; localStorage.setItem('nn-lang', lang);
+  const y = window.scrollY; render(); window.scrollTo(0, y);
+  app.querySelectorAll('.rv').forEach(el => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight) el.classList.add('instant','in'); });
+});
+
+render();
+})();
+</script>
+</body>
+</html>
