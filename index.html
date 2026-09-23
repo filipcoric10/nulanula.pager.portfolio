@@ -153,7 +153,7 @@ h1,p{margin:0}
 .contact{padding:24px 18px;gap:10px;margin-bottom:24px}
 .contact a{font-size:23px;font-weight:600}
 .contact address{font-style:normal;font-size:14px;line-height:1.5}
-.contact img{height:28px;width:auto;margin-top:12px}
+.contact img{height:44px;width:auto;max-width:none;align-self:flex-start;object-fit:contain;margin-top:14px}
 
 @media (min-width:600px){
   :root{--pad:32px}
@@ -185,7 +185,7 @@ h1,p{margin:0}
 .d .rot.mags{height:244px;margin:28px 0 0;max-width:380px;--cw:164px;--sw:128px}
 .d .rot.bks{height:230px;margin:14px 0 0;max-width:380px;--kw:310px}
 .d-addr{font-size:11.5px;line-height:1.45;padding-top:18px;color:var(--muted);font-style:normal}
-.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:auto auto auto;gap:12px;align-self:start}
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:auto 1fr 1fr;gap:12px;align-self:stretch}
 .row1{grid-column:1 / span 4;display:grid;grid-template-columns:1fr 1.3fr .8fr 1fr 1.1fr;gap:12px}
 .row1 .card{justify-content:space-between;min-height:112px;gap:10px}
 .row1 .num{font-size:clamp(20px,1.9vw,28px);color:var(--blue-d);white-space:nowrap}
@@ -193,7 +193,8 @@ h1,p{margin:0}
 .span2{grid-column:span 2}
 .bento .card{padding:16px}
 .b-cap{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
-.b-reader{gap:12px}
+.b-reader{gap:12px;justify-content:flex-start!important}
+.b-reader .grid{flex:1;align-content:space-evenly}
 .b-reader .b-cap{color:var(--green-d)}
 .b-reader .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
 .b-reader .num{font-size:22px;color:var(--green-d)}
@@ -201,7 +202,7 @@ h1,p{margin:0}
 .b-nl{gap:14px}
 .b-nl .num{font-size:40px;letter-spacing:-.02em}
 .b-nl div div:last-child{font-size:12.5px;line-height:1.35;margin-top:2px}
-.b-nl .last{margin-top:4px}
+.b-nl .last{margin-top:0}
 .b-eng{gap:6px}
 .b-eng .big{font-size:46px;font-weight:600;line-height:1;letter-spacing:-.02em}
 .b-eng p{font-size:12.5px;line-height:1.4;margin-top:6px;text-wrap:pretty}
@@ -212,7 +213,8 @@ h1,p{margin:0}
 .b-fmt{gap:9px}
 .b-fmt .f{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600}
 .b-fmt .note{font-size:11.5px;line-height:1.35;color:var(--muted);margin-top:4px}
-.r3{display:grid;grid-template-rows:auto auto;gap:12px;min-height:0}
+.r3{display:grid;grid-template-rows:1fr 1fr;gap:12px;min-height:0}
+.bento>.card:not(.row1 .card),.r3>.card{justify-content:space-between}
 .b-eng.hz{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto 1fr;column-gap:20px;row-gap:4px;align-items:start}
 .b-eng.hz .big{grid-row:1 / span 2;align-self:center}
 .b-eng.hz p{margin-top:0}
@@ -343,7 +345,7 @@ function mobile(c){
       <div class="g4 small-cards dig">${c.digital.map((g,i)=>stat(i+1,'bt',g[0],g[1])).join('')}</div></section>
     <section class="m-sec">${sh('06', c.s6)}<p>${esc(c.s6lede)}</p>
       <div class="g3 fmt">${c.formats.map((f,i)=>`<div class="card paper rv" style="--d:${i}">${pg(PG[i])}<div><b>${esc(f[0])}</b><span>${esc(f[1])}</span></div></div>`).join('')}</div></section>
-    <section class="card blue contact rv" style="--d:0"><div class="cap">${esc(c.contact)}</div><a href="mailto:${EMAIL}">${EMAIL}</a><address>${ADDR}</address><img src="assets/logo-paper.png" alt="NULA NULA" width="328" height="132"></section>
+    <section class="card blue contact rv" style="--d:0"><div class="cap">${esc(c.contact)}</div><a href="mailto:${EMAIL}">${EMAIL}</a><address>${ADDR}</address><img src="assets/logo-white-hd.png" alt="NULA NULA" width="1344" height="409"></section>
   </div>
 </div>`;
 }
