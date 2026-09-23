@@ -184,8 +184,7 @@ h1,p{margin:0}
 .d-left p{font-size:clamp(14.5px,1.1vw,17px);line-height:1.45;text-wrap:pretty}
 .d .rot.mags{height:244px;margin:28px 0 0;max-width:380px;--cw:164px;--sw:128px}
 .d .rot.bks{height:230px;margin:14px 0 0;max-width:380px;--kw:310px}
-.d-foot{margin-top:auto;padding-top:28px}
-.d-addr{font-size:12px;line-height:1.45;color:var(--muted);font-style:normal}
+.d-addr{font-size:12px;line-height:1.45;color:var(--muted);font-style:normal;margin-top:auto;padding-top:20px}
 .bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:auto 1fr 1fr;gap:12px;align-self:stretch}
 .row1{grid-column:1 / span 4;display:grid;grid-template-columns:1fr 1.3fr .8fr 1fr 1.1fr;gap:12px}
 .row1 .card{justify-content:space-between;min-height:112px;gap:10px}
@@ -359,7 +358,7 @@ function desktop(c){
   <header class="d-head"><img src="assets/logo-ink.png" alt="NULA NULA" width="328" height="132">
     <div class="right"><div class="cap">Slow football · ${esc(c.kicker)}</div><a href="mailto:${EMAIL}">${EMAIL}</a>${toggle()}</div></header>
   <div class="d-grid">
-    <div class="d-left"><h1>${esc(c.h1)}</h1><p>${esc(c.lede)}</p>${stacked(c)}</div>
+    <div class="d-left"><h1>${esc(c.h1)}</h1><p>${esc(c.lede)}</p>${stacked(c)}<address class="d-addr">NULA NULA IZDAVAŠTVO d.o.o. · Ivana Bogdanovića Vanjke 13, 11500 Obrenovac, Srbija</address></div>
     <div class="bento">
       <div class="row1">${c.hero5.map((s,i)=>stat(i,'paper',s[0],s[1])).join('')}</div>
       <div class="card gt span2 b-reader rv" style="--d:5"><div class="b-cap">01 · ${esc(c.s1)}</div>
@@ -377,7 +376,6 @@ function desktop(c){
       </div>
     </div>
   </div>
-  <footer class="d-foot"><address class="d-addr">NULA NULA IZDAVAŠTVO d.o.o. · Ivana Bogdanovića Vanjke 13, 11500 Obrenovac, Srbija</address></footer>
 </div>`;
 }
 
