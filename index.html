@@ -137,8 +137,13 @@ h1,p{margin:0}
 .eng .big{font-size:60px;font-weight:600;line-height:1;letter-spacing:-.02em}
 .eng p{font-size:14.5px;line-height:1.45;text-wrap:pretty}
 .nl{padding:20px 18px;gap:14px}
+.tw{position:relative;font-size:17px;line-height:1.45;text-wrap:pretty}
+.tw-src{visibility:hidden}
+.tw-out{position:absolute;inset:0}
+.tw-out i{display:inline-block;width:2px;height:1em;background:currentColor;margin-left:2px;vertical-align:-.12em}
+.b-green .tw{font-size:inherit;line-height:inherit}
 .nl-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.nl-row .num{font-size:40px;letter-spacing:-.02em}
+.nl-row .num{font-size:40px;letter-spacing:-.02em;font-variant-numeric:tabular-nums lining-nums}
 .nl-row div div:last-child{font-size:13px;line-height:1.35;white-space:pre-line;margin-top:4px}
 .small-cards .card{min-height:96px}
 .small-cards .num{font-size:18px;color:var(--blue-d)}
@@ -206,6 +211,9 @@ h1,p{margin:0}
 .b-eng{gap:6px}
 .b-eng .big{font-size:46px;font-weight:600;line-height:1;letter-spacing:-.02em}
 .b-eng p{font-size:12.5px;line-height:1.4;margin-top:6px;text-wrap:pretty}
+.b-ig{gap:10px}
+.b-ig .num{font-size:34px;letter-spacing:-.02em;font-variant-numeric:tabular-nums lining-nums}
+.b-ig div div:last-child{font-size:12.5px;line-height:1.3;margin-top:2px}
 .b-psy{gap:10px}
 .b-psy .b-cap,.b-fmt .b-cap{color:var(--blue-d)}
 .b-psy b{font-size:17px;font-weight:600;display:block;line-height:1.25}
@@ -221,6 +229,8 @@ h1,p{margin:0}
 .bento .b-green{justify-content:flex-start;gap:8px}
 .b-green .big{margin-bottom:4px}
 .b-green p{margin-top:0}
+.bento .b-green{justify-content:center}
+.b-green .writers{font-size:clamp(17px,1.35vw,21px);line-height:1.4;text-wrap:pretty}
 .b-fmt.hz .fl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 16px}
 
 @media (prefers-reduced-motion:reduce){.rv{transition:none;opacity:1;transform:none}.layer{transition:none}.caret{animation:none}}
@@ -258,12 +268,14 @@ const COPY = {
     s3lede: 'Zašto je tromesečni magazin bolji za reklamu od dnevnog portala.',
     s6lede: 'Oglasi u magazinu i digitalni paketi. Uslovi na upit.',
     contact: 'Kontakt',
-    hero: [['2.500','štampanih i rasprodanih primeraka trećeg broja'],['94%','čitalaca ne baca magazin'],['3h+','vreme čitanja jednog broja'],['3','čitaoca po primerku']],
+    hero: [['2.500','tiraž'],['360.000','mesečni reach na partnerskim platformama'],['3h+','vreme čitanja jednog broja'],['19.500','pojedinačnih čitalaca prva tri broja magazina']],
     hero5: [['2.500','tiraž'],['19.500','pojedinačnih čitalaca prva tri broja'],['16','zemalja naručuje'],['3h+','vreme čitanja jednog broja'],['360.000','mesečni reach na objavama partnerskih platformi']],
     demo: [['85 : 15','muškarci / žene, uz stalni rast ženske publike'],['25–45','godina, fokus na 30–39; profesionalno ostvareni i finansijski nezavisni'],['72%','visoko obrazovanje; kreativci, programeri, menadžeri i preduzetnici'],['Premium','srednja i visoka kupovna moć; budžet za premium proizvode, putovanja i slobodno vreme']],
     demoShort: ['muškarci / žene, ženska publika raste','godina, fokus na 30–39','visoko obrazovanje: kreativci, programeri, menadžeri, preduzetnici','srednja i visoka kupovna moć'],
     psy: [['Fudbal kao kultura','Retro dresovi, dobri dokumentarci, putovanja na utakmice i lokalna fudbalska kultura. Zanimaju ga priče o ljudima, ne samo statistika.'],['Premium životni stil','Kvalitet ispred kvantiteta: craft pivo ili dobra kafa, dobar komad odeće. Tehnički pismen, a ceni analogni osećaj vrhunskog papira.'],['Održivost i estetika','Privlače ga brendovi koji imaju priču i dobar vizuelni identitet, bez agresivnog pritiska da se nešto kupi.']],
+    ig: [[2340,'','pratilaca'],[113000,'','nedeljni reach'],[71,'%','non-followers']],
     eng2: ['94%','Vek trajanja','Magazin se čuva na policama i klub-stolićima kao coffee table book. Reklama živi mesecima, pa i godinama.'],
+    writers: 'Za nas pišu najbolji novinari iz Engleske i Španije, nekadašnji urednici najčitanijih regionalnih sportskih medija, kolumnisti iz pop kulture, oni koji žele da ispričaju priče koje dugo traju.',
     eng3: ['×3','Sekundarna publika','Svaki primerak pročitaju 3 osobe: deli se među prijateljima, stoji u premium kafićima, brijačnicama i konceptualnim radnjama.'],
     nl: [['55%','otvaranje\nnewslettera'],['1.500+','pretplatnika\nnewslettera']],
     nums: [['3 × 124','izdanja, po 124 strane'],['6.500','rasprodanih primeraka: 2.000 + 2.000 + 2.500'],['19.500','pojedinačnih čitalaca prva tri broja'],['5–8 h','za čitanje jednog broja'],['16','zemalja iz kojih su stigle narudžbe'],['~10.000','poseta sajtu'],['1.500+','pretplatnika newslettera'],['55%','prosečna stopa otvaranja newslettera'],['8,43%','prosečna stopa klikova']],
@@ -282,12 +294,14 @@ const COPY = {
     s3lede: 'Why a quarterly magazine beats a daily portal for advertising.',
     s6lede: 'Print ads and digital packages. Terms on request.',
     contact: 'Contact',
-    hero: [['2,500','copies of issue 3, printed and sold out'],['94%','of readers keep the magazine'],['3h+','reading time per issue'],['3','readers per copy']],
+    hero: [['2,500','print run'],['360,000','monthly reach on partner platforms'],['3h+','reading time per issue'],['19,500','individual readers of the first three issues']],
     hero5: [['2,500','print run'],['19,500','individual readers of the first three issues'],['16','countries ordering'],['3h+','reading time per issue'],['360,000','monthly reach on partner platform posts']],
     demo: [['85 : 15','men / women, with a steadily growing female readership'],['25–45','years old, focus on 30–39; established and financially independent'],['72%','university-educated; creatives, developers, managers and entrepreneurs'],['Premium','middle to high purchasing power; budget for premium products, travel and leisure']],
     demoShort: ['men / women, female readership growing','years old, focus on 30–39','university-educated: creatives, developers, managers, entrepreneurs','middle to high purchasing power'],
     psy: [['Football as culture','Retro shirts, good documentaries, away-day travel and local football culture. Interested in people’s stories, not just statistics.'],['Premium lifestyle','Quality over quantity: craft beer or good coffee, a well-made garment. Tech-literate, yet values the analogue feel of fine paper.'],['Sustainability & aesthetics','Drawn to brands with a story and a strong visual identity that don’t push aggressively to sell.']],
+    ig: [[2340,'','followers'],[113000,'','weekly reach'],[71,'%','non-followers']],
     eng2: ['94%','Shelf life','Kept on shelves and coffee tables like a coffee table book. Your ad lives for months, even years.'],
+    writers: 'We are written by top journalists from England and Spain, former editors of the most-read regional sports media, pop-culture columnists, people who want to tell stories that last.',
     eng3: ['×3','Pass-along','Each copy is read by 3 people: shared among friends, found in premium cafés, barbershops and concept stores.'],
     nl: [['55%','newsletter\nopen rate'],['1,500+','newsletter\nsubscribers']],
     nums: [['3 × 124','issues, 124 pages each'],['6,500','copies sold out: 2,000 + 2,000 + 2,500'],['19,500','individual readers of the first three issues'],['5–8 h','to read one issue'],['16','countries orders came from'],['~10,000','website visits'],['1,500+','newsletter subscribers'],['55%','average newsletter open rate'],['8.43%','average click rate']],
@@ -339,14 +353,13 @@ function mobile(c){
     <section class="m-sec">${sh('03', c.s3)}<div class="it">${esc(c.s3lede)}</div>
       <div class="card blue nl rv" style="--d:0"><div class="cap">Newsletter</div><div class="nl-row">${c.nl.map(n=>`<div><div class="num">${esc(n[0])}</div><div>${esc(n[1])}</div></div>`).join('')}</div></div>
       <div class="eng-wrap" style="display:grid;gap:14px">
-        ${[[c.eng2,'mustard'],[c.eng3,'green']].map(([e,cl],i)=>`<div class="card ${cl} eng rv" style="--d:${i+1}"><div class="cap">${esc(e[1])}</div><div class="big">${esc(e[0])}</div><p>${esc(e[2])}</p></div>`).join('')}
+        <div class="card mustard nl rv" style="--d:1"><div class="cap">NULA NULA Instagram</div><div class="nl-row">${c.ig.slice(1).map(s=>`<div><div class="num"><span data-count="${s[0]}" data-suf="${s[1]}">0${s[1]}</span></div><div>${esc(s[2])}</div></div>`).join('')}</div></div>
+        <div class="card green eng rv" style="--d:2"><div class="tw"><span class="tw-src">${esc(c.writers)}</span><span class="tw-out" data-typer aria-hidden="true"></span></div></div>
       </div></section>
-    <section class="m-sec">${sh('04', c.s4)}
-      <div class="g3 small-cards">${c.nums.map((r,i)=>stat(i,'paper',r[0],r[1])).join('')}</div></section>
-    <section class="m-sec">${sh('05', c.s5)}
-      <div class="card blue reach rv" style="--d:0"><div class="num">${esc(c.hero5[4][0])}</div><div>${esc(c.hero5[4][1])}</div></div>
-      <div class="g4 small-cards dig">${c.digital.map((g,i)=>stat(i+1,'bt',g[0],g[1])).join('')}</div></section>
-    <section class="m-sec">${sh('06', c.s6)}<p>${esc(c.s6lede)}</p>
+    
+    <section class="m-sec">${sh('04', c.s5)}
+      <div class="card blue reach rv" style="--d:0"><div class="num">${esc(c.hero5[4][0])}</div><div>${esc(c.hero5[4][1])}</div></div></section>
+    <section class="m-sec">${sh('05', c.s6)}<p>${esc(c.s6lede)}</p>
       <div class="g3 fmt">${c.formats.map((f,i)=>`<div class="card paper rv" style="--d:${i}">${pg(PG[i])}<div><b>${esc(f[0])}</b><span>${esc(f[1])}</span></div></div>`).join('')}</div></section>
     <section class="card blue contact rv" style="--d:0"><div class="cap">${esc(c.contact)}</div><a href="mailto:${EMAIL}">${EMAIL}</a><address>${ADDR}</address><img src="assets/logo-white-hd.png" alt="NULA NULA" width="1344" height="409"></section>
   </div>
@@ -365,11 +378,12 @@ function desktop(c){
         <div class="grid">${c.demo.map((d,i)=>`<div><div class="num">${esc(d[0])}</div><div>${esc(c.demoShort[i])}</div></div>`).join('')}</div></div>
       <div class="card blue b-nl rv" style="--d:6"><div class="b-cap">Newsletter</div>
         ${c.nl.map((n,i)=>`<div class="${i?'last':''}"><div class="num">${esc(n[0])}</div><div>${esc(n[1].replace('\n',' '))}</div></div>`).join('')}</div>
-      <div class="card mustard b-eng rv" style="--d:7"><div class="b-cap">${esc(c.eng2[1])}</div><div class="big">${esc(c.eng2[0])}</div><p>${esc(c.eng2[2])}</p></div>
+      <div class="card mustard b-ig rv" style="--d:7"><div class="b-cap">NULA NULA Instagram</div>
+        ${c.ig.map(s=>`<div><div class="num"><span data-count="${s[0]}" data-suf="${s[1]}">0${s[1]}</span></div><div>${esc(s[2])}</div></div>`).join('')}</div>
       <div class="card paper span2 b-psy rv" style="--d:8"><div class="b-cap">02 · ${esc(c.s2)}</div>
         ${c.psy.map(p=>`<div><b>${esc(p[0])}</b><span>${esc(p[1])}</span></div>`).join('')}</div>
       <div class="span2 r3">
-        <div class="card green b-eng b-green rv" style="--d:9"><div class="big">${esc(c.eng3[0])}</div><div class="b-cap">${esc(c.eng3[1])}</div><p>${esc(c.eng3[2])}</p></div>
+        <div class="card green b-eng b-green rv" style="--d:9"><div class="writers"><div class="tw"><span class="tw-src">${esc(c.writers)}</span><span class="tw-out" data-typer aria-hidden="true"></span></div></div></div>
         <div class="card paper b-fmt hz sm rv" style="--d:10"><div class="b-cap">${esc(c.s6)}</div>
           <div class="fl">${c.formats.map((f,i)=>`<div class="f">${pg(PG[i])}<span>${esc(f[0])}</span></div>`).join('')}</div>
           <div class="note">${esc(c.s6lede)}</div></div>
@@ -389,14 +403,44 @@ function render(){
   bindReveal(); bindRotators(); paintIntro();
 }
 
+const fmtNum = n => n.toLocaleString(lang === 'SR' ? 'de-DE' : 'en-US');
+function countUp(root, instant){
+  root.querySelectorAll('[data-count]').forEach(el => {
+    const to = +el.dataset.count, suf = el.dataset.suf || '';
+    if (instant || matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = fmtNum(to) + suf; return; }
+    const t0 = performance.now(), dur = 1600, delay = 250;
+    const step = now => {
+      const k = Math.min(1, Math.max(0, (now - t0 - delay) / dur));
+      const eased = 1 - Math.pow(1 - k, 3);
+      el.textContent = fmtNum(Math.round(to * eased)) + suf;
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  });
+}
+function typeUp(root, instant){
+  root.querySelectorAll('[data-typer]').forEach(el => {
+    const full = el.previousElementSibling.textContent;
+    clearInterval(el._tt);
+    if (instant || matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = full; return; }
+    let n = 0; el.textContent = '';
+    setTimeout(() => {
+      el._tt = setInterval(() => {
+        n = Math.min(full.length, n + 2);
+        el.innerHTML = esc(full.slice(0, n)) + (n < full.length ? '<i></i>' : '');
+        if (n >= full.length) clearInterval(el._tt);
+      }, 24);
+    }, 350);
+  });
+}
 function bindReveal(){
   io && io.disconnect();
   const els = app.querySelectorAll('.rv');
-  if (!('IntersectionObserver' in window)) { els.forEach(e=>e.classList.add('in')); return; }
-  io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  if (!('IntersectionObserver' in window)) { els.forEach(e=>{ e.classList.add('in'); countUp(e, true); typeUp(e, true); }); return; }
+  io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); countUp(e.target); typeUp(e.target); io.unobserve(e.target); } }), { threshold: 0.12 });
   els.forEach(el => {
     const r = el.getBoundingClientRect();
-    if (r.height && r.bottom < 0) el.classList.add('instant','in'); else io.observe(el);
+    if (r.height && r.bottom < 0) { el.classList.add('instant','in'); countUp(el, true); typeUp(el, true); } else io.observe(el);
   });
 }
 
@@ -444,7 +488,7 @@ document.addEventListener('click', e => {
   if (!b || b.dataset.lang === lang) return;
   lang = b.dataset.lang; localStorage.setItem('nn-lang', lang);
   const y = window.scrollY; render(); window.scrollTo(0, y);
-  app.querySelectorAll('.rv').forEach(el => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight) el.classList.add('instant','in'); });
+  app.querySelectorAll('.rv').forEach(el => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight) { el.classList.add('instant','in'); countUp(el, true); typeUp(el, true); } });
 });
 
 render();
